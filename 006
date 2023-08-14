@@ -5,26 +5,26 @@ using namespace std;
 
 struct Estudiante {
     string nombre;
-    double notas[3];
+    int notas[3];
 };
 
 int main() {
     Estudiante juan, alejandro, mia;
 
     juan.nombre = "Juan";
-    juan.notas[0] = 85.5;
-    juan.notas[1] = 90.0;
-    juan.notas[2] = 78.8;
+    juan.notas[0] = 45;
+    juan.notas[1] = 35;
+    juan.notas[2] = 50;
 
     alejandro.nombre = "Alejandro";
-    alejandro.notas[0] = 92.0;
-    alejandro.notas[1] = 88.5;
-    alejandro.notas[2] = 95.2;
+    alejandro.notas[0] = 35;
+    alejandro.notas[1] = 12;
+    alejandro.notas[2] = 40;
 
     mia.nombre = "Mia";
-    mia.notas[0] = 78.3;
-    mia.notas[1] = 82.6;
-    mia.notas[2] = 87.9;
+    mia.notas[0] = 40;
+    mia.notas[1] = 30;
+    mia.notas[2] = 47;
 
     Estudiante *pJuan = &juan;
     Estudiante *pAlejandro = &alejandro;
