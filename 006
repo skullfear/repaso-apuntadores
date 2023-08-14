@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+
+struct Alumno {
+    std::string nombre;
+    float notas[3];
+};
+
+int main() {
+    Alumno alumnos[3]; // Array de alumnos
+    Alumno *pAlumno = alumnos; // Apuntador al primer alumno
+
+    // Ingreso de datos
+    for (int i = 0; i < 3; ++i) {
+        std::cout << "Ingrese el nombre del alumno " << i + 1 << ": ";
+        std::cin >> pAlumno->nombre;
+
+        std::cout << "Ingrese las 3 notas del alumno " << i + 1 << ":\n";
+        for (int j = 0; j < 3; ++j) {
+            std::cout << "Nota " << j + 1 << ": ";
+            std::cin >> pAlumno->notas[j];
+        }
+
+        ++pAlumno; // Avanzar al siguiente alumno
+    }
+
+    // Mostrar los datos ingresados
+    pAlumno = alumnos; // Reiniciar el apuntador al primer alumno
+    for (int i = 0; i < 3; ++i) {
+        std::cout << "Alumno " << i + 1 << ":\n";
+        std::cout << "Nombre: " << pAlumno->nombre << "\n";
+        std::cout << "Notas: ";
+        for (int j = 0; j < 3; ++j) {
+            std::cout << pAlumno->notas[j] << " ";
+        }
+        std::cout << "\n\n";
+
+        ++pAlumno; // Avanzar al siguiente alumno
+    }
+
+    return 0;
+}
