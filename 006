@@ -9,50 +9,34 @@ struct Estudiante {
 };
 
 int main() {
-    Estudiante juan, alejandro, mia;
+    const int numEstudiantes = 3;
+    Estudiante estudiantes[numEstudiantes];
 
-    juan.nombre = "Juan";
-    juan.notas[0] = 45;
-    juan.notas[1] = 35;
-    juan.notas[2] = 50;
+    estudiantes[0].nombre = "Juan";
+    estudiantes[0].notas[0] = 45;
+    estudiantes[0].notas[1] = 35;
+    estudiantes[0].notas[2] = 50;
 
-    alejandro.nombre = "Alejandro";
-    alejandro.notas[0] = 35;
-    alejandro.notas[1] = 12;
-    alejandro.notas[2] = 40;
+    estudiantes[1].nombre = "Alejandro";
+    estudiantes[1].notas[0] = 35;
+    estudiantes[1].notas[1] = 12;
+    estudiantes[1].notas[2] = 40;
 
-    mia.nombre = "Mia";
-    mia.notas[0] = 40;
-    mia.notas[1] = 30;
-    mia.notas[2] = 47;
-
-    Estudiante *pJuan = &juan;
-    Estudiante *pAlejandro = &alejandro;
-    Estudiante *pMia = &mia;
+    estudiantes[2].nombre = "Mia";
+    estudiantes[2].notas[0] = 40;
+    estudiantes[2].notas[1] = 30;
+    estudiantes[2].notas[2] = 47;
 
     cout << "Notas de los estudiantes:" << endl;
-
-    // Mostrar notas de Juan
-    cout << pJuan->nombre << ": ";
-    for (int i = 0; i < 3; ++i) {
-        cout << pJuan->notas[i] << " ";
+    for (int i = 0; i < numEstudiantes; ++i) {
+        cout << estudiantes[i].nombre << ": ";
+        for (int j = 0; j < 3; ++j) {
+            cout << estudiantes[i].notas[j] << " ";
+        }
+        cout << endl;
     }
-    cout << endl;
-
-    // Mostrar notas de Alejandro
-    cout << pAlejandro->nombre << ": ";
-    for (int i = 0; i < 3; ++i) {
-        cout << pAlejandro->notas[i] << " ";
-    }
-    cout << endl;
-
-    // Mostrar notas de Mia
-    cout << pMia->nombre << ": ";
-    for (int i = 0; i < 3; ++i) {
-        cout << pMia->notas[i] << " ";
-    }
-    cout << endl;
 
     return 0;
 }
+
 
